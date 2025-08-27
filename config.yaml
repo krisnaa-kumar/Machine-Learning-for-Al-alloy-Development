@@ -1,0 +1,13 @@
+ollama_host: "http://127.0.0.1:11434"
+text_model:   "qwen2.5vl"
+vision_model: "qwen2.5vl"
+reference_screenshots:
+  - "example_train.png"
+  - "example_composition.png"
+negative_reference_screenshots:
+  - example_xrd1.png
+  - example_xrd2.png
+similarity_threshold: 0.25              
+min_aspect_ratio: 1.5                   
+grayscale_tol: 50
+allow_grayscale_mode: true
