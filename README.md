@@ -1,7 +1,7 @@
 # Machine-Learning-for-Al-alloy-Development
 
 # Alloy PDF → Structured Data
-*A lightweight, auditable pipeline that utilises alloy **composition**, **processing parameters**, and **tensile properties** from scientific PDFs using CLIP, OCR, and a **local** multimodal LLM.*
+*An auditable pipeline that utilises alloy **composition**, **processing parameters**, and **tensile properties** from scientific PDFs using CLIP, OCR, and a **local** multimodal LLM.*
 
 ---
 
