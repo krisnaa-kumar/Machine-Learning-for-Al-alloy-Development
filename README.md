@@ -18,7 +18,7 @@ Given a PDF, the pipeline:
 6. Parses **Methods** text (Text-LLM) to extract **processing parameters** (extrusion ratio/rate, solution/aging temps & times, quench temp).  
 7. **Validates** and assembles a typed `AlloyRecord`, then writes **one CSV per PDF**.
 
-Deterministic gates (layout/CLIP/OCR) **slash LLM calls** and false positives; schema + unit checks make outputs **analysis-ready**.
+Deterministic gates (layout/CLIP/OCR) **reduce LLM calls** and false positives, schema + unit checks make outputs **analysis-ready**.
 
 ---
 
@@ -71,7 +71,7 @@ The pipeline emits helpful artifacts:
 - `debug_cropped_block.png` — half-panel sent to the LLM  
 - `debug_mech_table.png` — fallback mechanical table crop  
 
-If charts aren’t found:
+If bar charts aren’t found:
 
 - Slightly lower `similarity_threshold` (e.g., `0.26 → 0.24`).  
 - Add more/better **reference screenshots** of true tensile bar charts.  
@@ -80,10 +80,6 @@ If charts aren’t found:
 If compositions don’t sum to 100:
 
 - Confirm “Bal./Balance” columns are present—the normaliser drops them, then sets `Al = 100 − Σ(others)`.
-
-GPU vs CPU:
-
-- **CLIP** benefits from GPU. Everything else is fine on CPU; **Ollama** is local.
 
 ---
 
