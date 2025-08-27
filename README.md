@@ -22,26 +22,6 @@ Deterministic gates (layout/CLIP/OCR) **slash LLM calls** and false positives; s
 
 ---
 
-## Repository layout
-├─ main.py # Orchestrates the end-to-end pipeline
-├─ extractors/
-│ ├─ image_extractor.py # PyMuPDF block scan, CLIP ref-embs, precise PDF cropping
-│ └─ table_extractor.py # Find “Table 1” (composition) & mechanical table regions
-├─ vision/
-│ └─ llm_queries.py # Qwen2.5-VL (Ollama) prompts for charts/tables
-├─ processing/
-│ └─ params_parser.py # Methods → processing params (text LLM)
-├─ validators/
-│ └─ normalizer.py # Pydantic schema, unit/range checks
-├─ models/
-│ └─ alloy_record.py # Typed record for CSV rows
-├─ utils/
-│ └─ helpers.py # YAML config loader, composition normaliser, label parsers
-└─ config.yaml # 
-
-
----
-
 ## Requirements
 
 - **Python** ≥ 3.10  
