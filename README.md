@@ -69,5 +69,55 @@ sudo apt-get update && sudo apt-get install -y tesseract-ocr
 curl -fsSL https://ollama.com/install.sh | sh
 ollama pull qwen2.5-vl
 
+```
+
+---
+
+## Usage
+```bash
+# In one terminal, start Ollama
+ollama serve
+
+# In another terminal, run the extractor
+python main.py path/to/paper.pdf out/paper.csv --config config.yaml
+```
+
+---
+## Debugging tips
+
+The pipeline emits helpful artifacts:
+
+- `debug_table.png` — composition table crop  
+- `debug_cropped_block.png` — half-panel sent to the LLM  
+- `debug_mech_table.png` — fallback mechanical table crop  
+
+If charts aren’t found:
+
+- Slightly lower `similarity_threshold` (e.g., `0.26 → 0.24`).  
+- Add more/better **reference screenshots** of true tensile bar charts.  
+- Ensure **Tesseract** is installed and on `PATH`.
+
+If compositions don’t sum to 100:
+
+- Confirm “Bal./Balance” columns are present—the normaliser drops them, then sets `Al = 100 − Σ(others)`.
+
+GPU vs CPU:
+
+- **CLIP** benefits from GPU. Everything else is fine on CPU; **Ollama** is local.
+
+---
+
+## Limitations 
+
+- Only tested on 4 papers (mentioned in report) due to time limitations, needs to modified further to hand more literature. 
+- Focused on **tensile bar charts** and standard **mechanical tables**; other plot types aren’t handled yet.  
+- OCR gate is token-based; unusual captions may slip through.  
+- No global batching/caching; one CSV per paper.
+
+
+
+
+
+
 
 
