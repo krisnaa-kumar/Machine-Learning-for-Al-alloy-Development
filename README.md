@@ -90,7 +90,11 @@ If compositions don’t sum to 100:
 - OCR gate is token-based; unusual captions may slip through.  
 - No global batching/caching; one CSV per paper.
 
+---
 
+## ML Models and Bayesian Optimisation
+
+Beyond the LLM extraction pipeline, this repo also includes the multi-objective Bayesian optimisation code (ParEGO + GP acquisition) for inverse alloy design and the ML surrogate models for UTS/elongation predictions (XGBoost, SVR, linear baselines). Reproduction scripts generate the candidate CSVs and Pareto plots used in my report.
 
 
 
