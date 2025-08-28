@@ -5,7 +5,7 @@
 
 ---
 
-## What this repo does
+## About repo
 
 Given a PDF, the pipeline:
 
